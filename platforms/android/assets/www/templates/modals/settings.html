@@ -1,0 +1,90 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Settings</h1>
+    <button class="button button-clear button-assertive" ng-click="hideSettings()">
+      Done
+    </button>
+  </ion-header-bar>
+  <ion-content class="bg-color-stable">
+    <div class="list">
+        <p style="margin-top: 8px;">&nbsp;</p>
+        <ion-item class="text-center color-red">
+          Get Tinder Plus
+        </ion-item>
+
+        <p style="margin-top: 8px;">&nbsp;</p>
+        <div class="padding color-gray">Discovery Settings</div>
+
+        <ion-item class="item-icon-right">
+          <span class="gotham-book">Location</span>
+          <span class="item-note color-darkgray gotham-book">Tokyo</span>
+          <i class="icon ion-ios-arrow-forward color-gray font-130 bold"></i>
+        </ion-item>
+
+        <ion-item class="item-icon-right">
+          <span class="gotham-book">Gender</span>
+          <span class="item-note color-gray gotham-medium">Only Women</span>
+          <i class="icon ion-ios-arrow-forward color-gray font-130 bold"></i>
+        </ion-item>
+
+        <p style="margin-top: 8px;">&nbsp;</p>
+        <ion-toggle  ng-model="myToggle" ng-change="highQualityChanged(toggle)" toggle-class="toggle-assertive" ng-checked='toggle'>
+          <span class="bold">Show me in Discovery</span>
+        </ion-toggle>
+        <p class="padding color-gray">When blah Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+        <p style="margin-top: 8px;">&nbsp;</p>
+        <div class="padding color-gray">Notifications</div>
+        <ion-toggle  ng-model="myToggle" ng-change="highQualityChanged(toggle)" toggle-class="toggle-assertive">
+          <span class="bold">New Matches</span>
+        </ion-toggle>
+        <ion-toggle  ng-model="myToggle" ng-change="highQualityChanged(toggle)" toggle-class="toggle-assertive">
+          <span class="bold">Messages</span>
+        </ion-toggle>
+        <ion-toggle  ng-model="myToggle" ng-change="highQualityChanged(toggle)" toggle-class="toggle-assertive">
+          <span class="bold">Messages Likes</span>
+        </ion-toggle>
+        <ion-toggle  ng-model="myToggle" ng-change="highQualityChanged(toggle)" toggle-class="toggle-assertive">
+          <span class="bold">Super Likes</span>
+        </ion-toggle>
+
+        <p style="margin-top: 4px;">&nbsp;</p>
+        <div class="padding color-gray">CONTACT US</div>
+        <ion-item class="text-center gotham-book">Help & Support</ion-item>
+        <p style="margin-top: 4px;">&nbsp;</p>
+        <ion-item class="text-center gotham-book">Give Us Feedback</ion-item>
+
+        <p style="margin-top: 4px;">&nbsp;</p>
+        <ion-item class="text-center gotham-book">Share Tinder</ion-item>
+
+        <p style="margin-top: 4px;">&nbsp;</p>
+        <div class="padding color-gray">Legal</div>
+        <ion-item class="item-icon-right gotham-book">
+          Privacy Policy
+          <i class="icon ion-ios-arrow-forward color-gray font-130 bold"></i>
+        </ion-item>
+        <ion-item class="item-icon-right gotham-book">
+          Terms of Service
+          <i class="icon ion-ios-arrow-forward color-gray font-130 bold"></i>
+        </ion-item>
+        <ion-item class="item-icon-right gotham-book">
+          Licenses
+          <i class="icon ion-ios-arrow-forward color-gray font-130 bold"></i>
+        </ion-item>
+        <p style="margin-top: 4px;">&nbsp;</p>
+        <ion-item class="text-center gotham-book">Logout</ion-item>
+
+        <p style="margin-top: 4px;">&nbsp;</p>
+        <p class="text-center">
+          <i class="ion-fireball text-center color-red" style="font-size:42px;"></i>
+        </p>
+        <p class="text-center">
+          Version 5.0.1
+        </p>
+        <p style="margin-top: 4px;">&nbsp;</p>
+        <ion-item class="text-center gotham-book">Delete Account</ion-item>
+        <p style="margin-top: 10px;">&nbsp;</p>
+
+    </div>
+  </ion-content>
+</ion-modal-view>

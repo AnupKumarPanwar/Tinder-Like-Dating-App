@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.rightswipe" version="8.6.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="startApp">
+        <param name="android-package" value="com.lampa.startapp.startApp" />
+    </feature>
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="AdMob">
+        <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
+    <name>RightSwipe</name>
+    <description>
+        Right Swipe has changed the way people meet around the world. It’s so much more than a social app. Right swipe is a powerful tool to meet people, expand your social network, meet new friends. This is an awesome right swipe app. Sorry, it is an awesome swipe right *dating app.Right swipe is the App which helps you discover the people you’ve crossed paths with, the people you like, and the people you’d like to find again! Right Swipe is the App that saves us from missed connections. Join the free dating network that’s bigger better. We bring interesting profiles so you can chat with and add them on Intagram or Snapchat and even meet your new favourite person.right swipe pics to like them and add them on top social networks. Making new connections on Right Swipe is easy and fun—just just, Swipe Right to Like someone, or Swipe Left to pass. If you like someone, you get their instagram and snapchat handler to add them. Then chat online with your matches, step away from your phone, get out and meet them in the real world. Right swipe left swipe, like dislike, chat ignore, and lot more. So much fun!
+    </description>
+    <author email="1anuppanwar@gmail.com" href="http://example.com.com/">
+      PTP Labs
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="resources\android\icon\drawable-xhdpi-icon.png" />
+    <icon density="ldpi" src="resources\android\icon\drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="resources\android\icon\drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="resources\android\icon\drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="resources\android\icon\drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="resources\android\icon\drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="resources\android\icon\drawable-xxxhdpi-icon.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="SplashScreen" value="none" />
+</widget>

@@ -1,0 +1,52 @@
+<ion-view view-title="Chat">
+<ion-content has-bouncing="true" class="has-header has-footer"
+              delegate-handle="userMessageScroll">
+
+  <div ng-repeat="message in messages" class="message-wrapper"
+                  on-hold="onMessageHold($event, $index, message)">
+
+    <div ng-if="user._id !== message.userId">
+
+      <div ng-controller="DashCtrl">
+        <img ng-click="showProfile()" class="profile-pic left"
+                          ng-src="{{toUser.pic}}" onerror="onProfilePicError(this)" />
+      </div>
+
+      <div class="chat-bubble left">
+
+        <div class="message" ng-bind-html="message.text"></div>
+
+      </div>
+    </div>
+
+    <div ng-if="user._id === message.userId">
+
+      <div ng-controller="DashCtrl">
+        <img ng-click="showProfile()" class="profile-pic right"
+                          ng-src="{{user.pic}}" onerror="onProfilePicError(this)" />
+      </div>
+
+      <div class="chat-bubble right">
+        <div class="message" ng-bind-html="message.text"></div>
+      </div>
+
+    </div>
+
+    <div class="cf"></div>
+
+  </div>
+</ion-content>
+
+<form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate>
+  <ion-footer-bar class="item-input-inset message-footer" keyboard-attach>
+    <label class="item-input-wrapper message-box">
+      <textarea ng-model="input.message" class="message-box" value="" placeholder="Send {{toUser.username}} a message..." required minlength="1" maxlength="1500" msd-elastic></textarea>
+    </label>
+    <div class="footer-btn-wrap">
+      <button class="button button-clear button-small footer-btn" type="submit"
+                        ng-disabled="!input.message || input.message === ''">Send</button>
+    </div>
+  </ion-footer-bar>
+</form>
+
+</ion-view>

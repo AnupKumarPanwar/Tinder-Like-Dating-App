@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "com.lampa.startapp": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.rightswipe"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.rightswipe"
+        }
+    },
+    "dependent_plugins": {
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        }
+    }
+}

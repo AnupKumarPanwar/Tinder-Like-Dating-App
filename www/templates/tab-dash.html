@@ -1,0 +1,158 @@
+<ion-view view-title="Tinder" hide-nav-bar="true" cache-view="false">
+      <ion-header-bar align-title="center" class="bar-stable">
+
+      	
+
+       <!--  <div class="buttons" ng-click="slideTo(0)">
+          <button class="button button-clear icon ion-person animated {{slideIndex == 0 ? 'color-red' : 'color-gray'}}"></button>
+        </div> -->
+
+        <h1 class="title {{slideIndex ==1 ? 'color-red' : 'color-gray'}}" ng-click="slideTo(1)" ng-show="cards.active.length" ng-if="cards.active.length">
+          <img ng-src="img/tinder.png" class="header-logo" style="width: 40%" >
+        </h1>
+    
+
+    <h1 class="title {{slideIndex ==1 ? 'color-red' : 'color-gray'}}" ng-click="slideTo(1)" style="margin-top: 125px; height: 100px; z-index: 100;" ng-if="!cards.active.length">
+      <img ng-src="img/tinder.png" class="header-logo" style="width: 65%" >
+    </h1>
+
+
+        <!-- <div class="buttons" ng-click="slideTo(2)">
+            <button class="button button-clear icon ion-chatbubbles animated {{slideIndex == 2 ? 'color-red' : 'color-gray'}}"></button>
+        </div> -->
+
+      </ion-header-bar>
+  <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false" active-slide="slideIndex" ion-slide-tabs>
+    <!-- <ion-slide on-drag-left="onRelease()" on-drag-right="onTouch()">
+      <ion-content>
+        <div class="profile-container">
+          <img ng-click="showProfile()" ng-src="img/ben.png" class="profile-image" width="100">
+          <img
+            ng-click="showEditProfile()"
+            ng-src="img/edit.png"
+            class="profile-edit"
+            width="50">
+        </div>
+
+          <div class="text-center padding" style="margin-top:22px;">
+            <h3>Ben</h3>
+            <h4>Ionic</h4>
+            <p class="color-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="color-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua...</p>
+          </div>
+
+          <ion-list class="text-center uppercase">
+            <ion-item class="color-red" style="top: 30px;" ng-click="showEditProfile()">
+              Edit Profile
+            </ion-item>
+            <ion-item class="color-red" style="top: 30px;" ng-click="showSettings()">
+              Settings
+            </ion-item>
+            <ion-item class="color-pastel-blue" style="top: 30px;">
+              Get Tinder Plus
+            </ion-item>
+          </ion-list>
+      </ion-content>
+    </ion-slide> -->
+
+
+    <ion-slide>
+
+          <div class="radar" ng-if="!cards.active.length" ng-click="refreshCards()" style="margin-top: 260px !important;">
+
+            <img ng-src="img/adam.png" width="100" height="100" style="width: 115%;height: auto;border: 0px !important;left: -4%;position: absolute;">
+            <!-- <img ng-src="img/adam.png" width="100" height="100" style="height: auto;border: 0px !important;left: -290px;position: absolu;width: 705px;px;top: -19px;"> -->
+          </div>
+
+          <!-- *************************
+            TD Cards
+            - We start off with an ng-if so that the cards are not generated
+              unless $scope.cards is not 'null'
+          ************************* -->
+          <div ng-if="cards.active">
+            <td-cards on-touch="onTouch()" on-release="onRelease()">
+              <td-card ng-style="$index > 3 &&  {'display':'none'}" ng-repeat="card in cards.active" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" ng-click="showProfile(card)">
+                <div class="image">
+                  <div class="no-text">NOPE</div>
+                  <div class="yes-text">LIKE</div>
+                  <!-- *************************
+                    Discard
+                    - The card is removed from the deck and a fly away animation is triggered.
+                    - onClickTransitionOut is found in ionic.tdcards.js
+                    - Animation can be customized by changing defaults
+                  ************************* -->
+                  <!-- <div class="discard" ng-click="onClickTransitionOut(card)">DISCARD</div> -->
+                  <div style="background-size: 100% !important;background: url('{{card.photo_url}}');width: 100%;height: 60vh;background-repeat: no-repeat;background-position: center;"></div>
+                  <!-- <img ng-src="{{ card.photo_tiny_url }}"> -->
+                  <div class="item">
+                    <h2>{{card.name}}, {{card.age}}</h2>
+                    <p>
+                      {{card.bio}}
+                      <!-- <i class="ion-ios-book color-coral font-150 pull-right"></i> -->
+                    </p>
+                    <p ng-hide="{{(card.bio).length}}">
+                      In search of Love ♥
+                      <!-- <i class="ion-ios-book color-coral font-150 pull-right"></i> -->
+                    </p>
+                  </div>
+                </div>
+              </td-card>
+              <!-- *************************
+                End Card
+                - 'drag' is set to false. The user cannot drag it.
+                - 'refreshCards()' reloads all cards that have NOT been discarded.
+              ************************* -->
+              <td-card id="end-card" drag="false">
+                <!-- <div class="tinder-refresh-button" ng-click="refreshCards()"></div> -->
+                <div class="disable-user-behavior">
+                  <!-- <div class="tinder-refresh-button" ng-click="refreshCards()"></div> -->
+                </div>
+                <!-- <i class="icon ion-ios-refresh disable-user-behavior" ng-click="refreshCards()"></i> -->
+              </td-card>
+            </td-cards>
+          </div>
+
+          <div class="tinder-buttons" ng-if="cards.active">
+              <!-- <div class="tinder-button  animated bounceIn" ng-click="hideProfile()"></div>
+              <div class="info"></div>
+              <div class="tinder-button  animated bounceIn"></div> -->
+          </div>
+    </ion-slide>
+<!--     <ion-slide on-drag-left="onTouch()" on-drag-right="onRelease()">
+      <ion-content>
+        <div class="item-input-inset">
+          <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input force-lower-case type="text" class="bold" placeholder="Search 7 Matches" ng-model="search" ng-value="search" ng-change="filterResults(search)">
+          </label>
+          <button class="button button-stable button-clear" ng-click="filterResults(null);search=null">
+            Cancel
+          </button>
+        </div>
+        <div class="item item-divider bg-white uppercase color-red" style="border:none;">
+          Matches
+          <span class="badge-tinder gotham-book">3</span>
+        </div>
+        <div class="padding">
+          <ks-swiper-container initial-slide="0" loop="false" show-nav-buttons="false" slides-per-view="4" space-between="5" pagination-clickable="false">
+              <ks-swiper-slide class="swiper-slide" ng-repeat="s in ['max', 'ben', 'perry', 'adam', 'mike']">
+                  <img ng-src="img/{{s}}.png" class="img-circled">
+              </ks-swiper-slide>
+          </ks-swiper-container>
+        </div>
+        <hr>
+        <div class="item item-divider bg-white uppercase color-red" style="border:none;">Messages</div>
+        <ion-list>
+            <ion-item class="item-light item-text-wrap item-avatar item-borderless item-icon-right" data-ng-repeat="blog in ['ben', 'max', 'mike', 'perry','ben', 'max', 'mike', 'perry'] track by $index" style="overflow:hidden;" ng-href="#/tab/dash/1">
+              <img ng-src="img/{{blog}}.png">
+              <h2 class="capitalize font-120">{{blog}}</h2>
+              <p class="capitalize color-gray">Sent you a message</p>
+              <hr class="item-hr">
+            </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-slide> -->
+  </ion-slide-box>
+</ion-view>

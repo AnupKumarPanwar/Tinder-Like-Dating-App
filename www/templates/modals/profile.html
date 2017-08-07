@@ -1,0 +1,43 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="list">
+      <ks-swiper-container initial-slide="0" pagination-is-active="true" pagination-cls="color-red" loop="false" show-nav-buttons="false" parallax="true" slides-per-view="1" space-between="0" pagination-clickable="false">
+          <ks-swiper-slide class="swiper-slide" ng-repeat="image in instagram_images track by $index">
+    
+              <img ng-src="{{image.images.standard_resolution.url}}" class="swiper-images" ng-click="hideProfile();">
+          </ks-swiper-slide>
+      </ks-swiper-container>
+      <ion-list class="list-borderless">
+        <ion-item class="item-icon-right">
+          <h2 class="font-130">{{current_card.name}}, {{current_card.age}}</h2>
+          <p class="color-gray">{{current_card.city_name}}</p>
+          <!-- <i class="icon ion-android-more-vertical color-red bold" ng-click="showActionSheet()"></i> -->
+        </ion-item>
+      </ion-list>
+      <div class="padding animated bounceInUp">
+          <span>{{current_card.bio}}</span>
+
+        <hr>
+        <h4>
+          Liked By {{current_card.liked_count}} People
+        </h4>
+        <span>
+          {{current_card.viewed_count}} people viewed this profile and {{current_card.liked_count}} people liked it.<br>
+        </span>
+
+        <hr>
+        <h4>
+          <male ng-show="{{current_card.interested_in==1}}">Interested in Males.</male><female ng-show="{{current_card.interested_in==2}}">Interested in Females.</female><both ng-show="{{current_card.interested_in==0}}">Interested in both Males & Females.</both>
+        </h4>
+
+        <button class="button margin-top-5 button-outline button-small button-assertive" ng-repeat="tag in current_card.tags"> {{tag.name}} </button>
+       
+      </div>
+    </div>
+    <p style="margin-top: 30px;">&nbsp;</p>
+  </ion-content>
+  <div class="ptinder-buttons">
+      <div class="ptinder-button  animated fadeInRightBig" ng-click="hideProfile()"></div>
+      <div class="ptinder-button  animated fadeInLeftBig" ng-click="itsAMatch()"></div>
+  </div>
+</ion-modal-view>
