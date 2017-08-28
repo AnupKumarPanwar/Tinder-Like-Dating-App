@@ -1,37 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version='1.0' encoding='utf-8'?>
 <widget id="com.rightswipe" version="8.6.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>RightSwipe</name>
-  <description>
+    <name>RightSwipe</name>
+    <description>
         Right Swipe has changed the way people meet around the world. It’s so much more than a social app. Right swipe is a powerful tool to meet people, expand your social network, meet new friends. This is an awesome right swipe app. Sorry, it is an awesome swipe right *dating app.Right swipe is the App which helps you discover the people you’ve crossed paths with, the people you like, and the people you’d like to find again! Right Swipe is the App that saves us from missed connections. Join the free dating network that’s bigger better. We bring interesting profiles so you can chat with and add them on Intagram or Snapchat and even meet your new favourite person.right swipe pics to like them and add them on top social networks. Making new connections on Right Swipe is easy and fun—just just, Swipe Right to Like someone, or Swipe Left to pass. If you like someone, you get their instagram and snapchat handler to add them. Then chat online with your matches, step away from your phone, get out and meet them in the real world. Right swipe left swipe, like dislike, chat ignore, and lot more. So much fun!
     </description>
-  <author email="1anuppanwar@gmail.com" href="http://example.com.com/">
+    <author email="1anuppanwar@gmail.com" href="http://example.com.com/">
       PTP Labs
     </author>
-  <content src="index.html"/>
-  <access origin="*"/>
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="android-minSdkVersion" value="16"/>
-  <preference name="BackupWebStorage" value="none"/>
-  <preference name="orientation" value="portrait"/>
-  <preference name="SplashScreen" value="none"/>
-  <feature name="StatusBar">
-    <param name="ios-package" onload="true" value="CDVStatusBar"/>
-  </feature>
-  <plugin name="cordova-plugin-whitelist" spec="~1.3.2"/>
-  <plugin name="cordova-plugin-statusbar" spec="~2.2.3"/>
-  <plugin name="cordova-plugin-splashscreen" spec="~4.0.3"/>
-  <plugin name="cordova-plugin-console" spec="~1.0.7"/>
-  <plugin name="cordova-plugin-device" spec="~1.1.6"/>
-  <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
-  <platform name="android">
-    <icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
-    <icon src="resources\android\icon\drawable-mdpi-icon.png" density="mdpi"/>
-    <icon src="resources\android\icon\drawable-hdpi-icon.png" density="hdpi"/>
-    <icon src="resources\android\icon\drawable-xhdpi-icon.png" density="xhdpi"/>
-    <icon src="resources\android\icon\drawable-xxhdpi-icon.png" density="xxhdpi"/>
-    <icon src="resources\android\icon\drawable-xxxhdpi-icon.png" density="xxxhdpi"/>
-  </platform>
-  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="SplashScreen" value="none" />
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <plugin name="cordova-plugin-whitelist" spec="~1.3.2" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.2.3" />
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.3" />
+    <plugin name="cordova-plugin-console" spec="~1.0.7" />
+    <plugin name="cordova-plugin-device" spec="~1.1.6" />
+    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+    <platform name="android">
+        <icon density="ldpi" src="resources\android\icon\drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="resources\android\icon\drawable-mdpi-icon.png" />
+        <icon density="hdpi" src="resources\android\icon\drawable-hdpi-icon.png" />
+        <icon density="xhdpi" src="resources\android\icon\drawable-xhdpi-icon.png" />
+        <icon density="xxhdpi" src="resources\android\icon\drawable-xxhdpi-icon.png" />
+        <icon density="xxxhdpi" src="resources\android\icon\drawable-xxxhdpi-icon.png" />
+    </platform>
+    <icon src="resources\android\icon\drawable-xhdpi-icon.png" />
+    <engine name="android" spec="~6.0.0" />
 </widget>
