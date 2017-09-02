@@ -38,7 +38,7 @@ function initApp() {
         autoShow: false
     });
 
-    // AdMob.showInterstitial();
+    AdMob.showInterstitial();
      
      
      AdMob.prepareRewardVideoAd({
@@ -47,8 +47,8 @@ function initApp() {
      });
      
      //!!!add the code here!!! - so, just paste what I wrote above:
-     setInterval(function(){AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        autoShow: true
-    })}, 900000);
+    //  setInterval(function(){AdMob.prepareInterstitial({
+    //     adId: admobid.interstitial,
+    //     autoShow: true
+    // })}, 30000);
 }

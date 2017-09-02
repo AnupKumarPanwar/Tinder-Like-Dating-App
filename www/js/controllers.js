@@ -173,11 +173,15 @@ angular.module('starter.controllers', [])
 $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
 .then(function(api)
 {
-  AdMob.showRewardVideoAd();
+  // AdMob.showRewardVideoAd();
+    AdMob.showInterstitial();
+
   
 
   if (!$scope.last) {
-  AdMob.showRewardVideoAd();
+  // AdMob.showRewardVideoAd();
+    AdMob.showInterstitial();
+
 
     $http.get(api.data)
     .then(function(data)
@@ -189,6 +193,7 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
       // $scope.cardTypes = [{ image: 'http://c1.staticflickr.com/1/297/19072713565_be3113bc67_n.jpg' }];
       console.log($scope.cardTypes);
 
+
       $scope.cards = {
         master: Array.prototype.slice.call($scope.cardTypes, 0),
         active: Array.prototype.slice.call($scope.cardTypes, 0),
@@ -197,12 +202,15 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
         disliked: []
       }
 
-      
+    AdMob.showInterstitial();
+          
 
     });
   }
   else{
-  AdMob.showRewardVideoAd();
+  // AdMob.showRewardVideoAd();
+    AdMob.showInterstitial();
+
     
     $http.get(api.data+'?last='+$scope.last)
     .then(function(data)
@@ -221,6 +229,8 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
         liked: [],
         disliked: []
       }
+
+    AdMob.showInterstitial();
 
     });
   }
@@ -253,6 +263,9 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
     $scope.cards.discards.push(discarded);
   });
 
+
+var leftSwipeCount=0;
+
   $scope.cardSwipedLeft = function(index) {
     console.log('LEFT SWIPE');
     console.log($scope.cards.active.length);
@@ -262,6 +275,11 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
 
     if ($scope.cards.active.length==1) {
       $state.go('tab.dash', {}, {reload: true});
+    }
+
+    leftSwipeCount++;
+    if (leftSwipeCount%3==0) {
+    AdMob.showInterstitial();
     }
 
     };
@@ -388,6 +406,9 @@ $scope.shareIt=function()
 
   // showProfile();
   function showProfile(card) {
+
+    
+
         console.log(card.instagram_username);
         if (card.instagram_username=="") {
           $scope.userDp=card.photo_url;
