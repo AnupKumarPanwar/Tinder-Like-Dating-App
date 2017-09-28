@@ -3,8 +3,8 @@ var admobid = {};
 // TODO: replace the following ad units with your own
 if( /(android)/i.test(navigator.userAgent) ) { 
   admobid = { // for Android
-    banner: 'ca-app-pub-3971583580619783/7793355351',
-    interstitial: 'ca-app-pub-3971583580619783/9270088554',
+    banner: 'ca-app-pub-3971583580619783/7479329887',
+    interstitial: 'ca-app-pub-3971583580619783/2512452973',
     reward: 'ca-app-pub-3971583580619783/5571795357'
   };
 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {

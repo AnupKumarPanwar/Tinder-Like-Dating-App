@@ -1,6 +1,7 @@
 <ion-modal-view>
   <ion-content>
 
+
   <style type="text/css">
     .loader {
       color: #ffffff;
@@ -85,7 +86,7 @@
 
   </style>
 
-    <div id="bg" style="background-image: url('{{userDp}}');">
+    <div id="bg" style="background-image: url('{{userDp}}');" >
       <div id="search-container">
         <div id="search-bg" style="background-image: url('{{userDp}}');"></div>
         <div id="search" style="height:{{deviceHeight}}px;">
@@ -106,8 +107,9 @@
             <button ng-click="openSnapchat()" class="button button-block button-stable button-outline" style="margin-top:17px;" ng-show="current_card.snapchat_username"><i class="ion-ios-browsers font-130"></i> Snapchat</button>
 
           </div>
-          <div class="text-center" style="margin-top:30px;" ng-click="shareIt()">
-            <button class="button button-block button-clear button-stable font-default"><i class="ion-share font-130"></i> Tell Your Friends</button>
+          <div class="text-center" style="margin-top:30px;">
+            <button class="button button-block button-clear button-stable font-default" ng-click="shareIt()"><i class="ion-share font-130"></i> Tell Your Friends</button>
+            <button class="button button-block button-clear button-stable font-default" ng-click="closeModal()"><i class="ion-close-circled"></i> Close</button>
           </div>
         </div>
       </div>

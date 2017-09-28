@@ -278,7 +278,7 @@ var leftSwipeCount=0;
     }
 
     leftSwipeCount++;
-    if (leftSwipeCount%3==0) {
+    if (leftSwipeCount%5==0) {
     AdMob.showInterstitial();
     }
 
@@ -493,6 +493,12 @@ $scope.shareIt=function()
    
 
   };
+
+
+  $scope.closeModal = function() {
+   $scope.modalMatch.hide();
+  };
+
 
   $scope.itsAMatch=function() {
     $ionicModal.fromTemplateUrl('templates/modals/match.html', {
