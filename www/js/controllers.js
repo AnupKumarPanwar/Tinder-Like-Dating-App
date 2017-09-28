@@ -368,13 +368,18 @@ $scope.openInstagram=function()
 {
     AdMob.showInterstitial();
     console.log($scope.current_card.instagram_username);
-   startApp.set({ /* params */
-   "action": "ACTION_SEND",
-   "package": "com.instagram.android",
-   "type": "text/plain",
-   "uri":"http://instagram.com/"+$scope.current_card.instagram_username
-  }, {
-  }).start();
+  //  startApp.set({ /* params */
+  //  "action": "ACTION_SEND",
+  //  "package": "com.instagram.android",
+  //  "type": "text/plain",
+  //  "uri":"http://instagram.com/"+$scope.current_card.instagram_username
+  // }, {
+  // }).start();
+
+
+  
+  window.open('https://instagram.com/'+$scope.current_card.instagram_username , '_system' , 'location=no, clearcache=no, clearsessioncache=no');
+
 }
 
 
@@ -398,9 +403,9 @@ $scope.openSnapchat=function()
 
 $scope.shareIt=function()
 {
-        var message = 'Make new friends on the RightSwipe App. Get the app :';
+        var message = 'Make new friends on the Hottest Dating App - RightFlick. Get the app :\n';
         var imageSource = "http://www.businesspundit.com/wp-content/uploads/2015/10/Match-group-files-IPO.jpg";
-        var shareLink = 'https://play.google.com/store/apps/details?id=com.rightswipe';
+        var shareLink = 'Find RightFlick on iTunes.';
         window.plugins.socialsharing.share(message, 'RightSwipe', imageSource, shareLink);
 };
 

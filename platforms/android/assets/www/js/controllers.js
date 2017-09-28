@@ -368,13 +368,18 @@ $scope.openInstagram=function()
 {
     AdMob.showInterstitial();
     console.log($scope.current_card.instagram_username);
-   startApp.set({ /* params */
-   "action": "ACTION_SEND",
-   "package": "com.instagram.android",
-   "type": "text/plain",
-   "uri":"http://instagram.com/"+$scope.current_card.instagram_username
-  }, {
-  }).start();
+  //  startApp.set({ /* params */
+  //  "action": "ACTION_SEND",
+  //  "package": "com.instagram.android",
+  //  "type": "text/plain",
+  //  "uri":"http://instagram.com/"+$scope.current_card.instagram_username
+  // }, {
+  // }).start();
+
+
+  
+  window.open('https://instagram.com/'+$scope.current_card.instagram_username , '_system' , 'location=no, clearcache=no, clearsessioncache=no');
+
 }
 
 
