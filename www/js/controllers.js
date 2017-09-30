@@ -174,13 +174,13 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
 .then(function(api)
 {
   // AdMob.showRewardVideoAd();
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
 
   
 
   if (!$scope.last) {
   // AdMob.showRewardVideoAd();
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
 
 
     $http.get(api.data)
@@ -209,7 +209,7 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
   }
   else{
   // AdMob.showRewardVideoAd();
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
 
     
     $http.get(api.data+'?last='+$scope.last)
@@ -279,7 +279,7 @@ var leftSwipeCount=0;
 
     leftSwipeCount++;
     if (leftSwipeCount%5==0) {
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
     }
 
     };
@@ -430,7 +430,7 @@ $scope.shareIt=function()
           }).then(function(modal) {
             $scope.modalProfile = modal;
             $scope.modalProfile.show();
-            AdMob.showInterstitial();
+            // AdMob.showInterstitial();
             $scope.hideProfile = function(){
               $scope.modalProfile.hide();
             }
