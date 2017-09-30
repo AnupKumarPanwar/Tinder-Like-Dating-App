@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-facebook-audnet-sdk"
+        version="4.26.0">
+      
+    <name>Facebook AudienceNetwork SDK for Cordova</name>
+    <description>Add Facebook SDK to Cordova porject, as dependency for other plugins</description>
+    <author>Facebook</author>
+    <keywords>rjfun,cordova,facebook,sdk</keywords>
+    <repo>https://github.com/floatinghotpot/cordova-facebook-audnet-sdk.git</repo>
+    <issue>https://github.com/floatinghotpot/cordova-facebook-audnet-sdk/issues</issue>
+
+    <engines>
+      <engine name="cordova" version=">=6.4.0"/>
+      <engine name="cordova-android" version=">=6.0.0"/>
+      <engine name="cordova-ios" version=">=4.3.0"/>
+    </engines>
+
+    <platform name="android">
+      <framework src="com.google.android.gms:play-services-ads:+"/>
+      <framework src="com.facebook.android:audience-network-sdk:+"/>
+     </platform>
+     
+    <platform name="amazon-fireos">
+      <framework src="com.google.android.gms:play-services-ads:+"/>
+      <framework src="com.facebook.android:audience-network-sdk:+"/>
+     </platform>
+
+     <platform name="ios">
+      <!-- FBAudienceNetwork in cocapods is not up to date, so we still download the SDK -->
+      <framework src="FBAudienceNetwork.framework" custom="true" />
+
+      <!-- required cordova 6.4.0 or higher -->
+      <!-- framework src="FBAudienceNetwork" type="podspec" spec="~> 4.26.0"/ -->
+    </platform>
+
+</plugin>

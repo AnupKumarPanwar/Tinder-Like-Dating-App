@@ -9,11 +9,7 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
@@ -21,7 +17,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         },
                         {
@@ -29,15 +29,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"startApp\"><param name=\"android-package\" value=\"com.lampa.startapp.startApp\" /></feature>",
+                            "xml": "<feature name=\"AppAvailability\"><param name=\"android-package\" value=\"com.ohh2ahh.appavailability.AppAvailability\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
                             "count": 1
                         },
                         {
@@ -45,7 +41,15 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FacebookAds\"><param name=\"android-package\" value=\"com.rjfun.cordova.facebookads.FacebookAdPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FlurryAds\"><param name=\"android-package\" value=\"com.rjfun.cordova.flurry.FlurryAdPlugin\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -53,29 +57,21 @@
             },
             "AndroidManifest.xml": {
                 "parents": {
-                    "/*": [
+                    "/manifest": [
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "xml": "<permission android:name=\"com.weather.weather.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "xml": "<uses-permission android:name=\"com.weather.weather.permission.RECEIVE_ADM_MESSAGE\" />",
                             "count": 1
                         }
                     ],
                     "/manifest/application": [
-                        {
-                            "xml": "<provider android:authorities=\"${applicationId}.sharing.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"nl.xservices.plugins.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/sharing_paths\" /></provider>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
-                            "count": 1
-                        },
                         {
                             "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
                             "count": 1
@@ -85,21 +81,41 @@
                             "count": 1
                         },
                         {
-                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.rightswipe\" /></intent-filter></receiver>",
+                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.weather.weather\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation|screenSize\" android:name=\"com.facebook.ads.InterstitialAdActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.flurry.android.FlurryFullscreenTakeoverActivity\"></activity>",
                             "count": 1
                         }
                     ],
-                    "/manifest": [
+                    "/*": [
                         {
-                            "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<permission android:name=\"com.rightswipe.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"com.rightswipe.permission.RECEIVE_ADM_MESSAGE\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -108,54 +124,63 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.weather.weather"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.weather.weather"
         },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "com.lampa.startapp": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "es6-promise-plugin": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-extension": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-admobpro": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "onesignal-cordova-plugin": {
-            "PACKAGE_NAME": "com.rightswipe"
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.weather.weather"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.rightswipe"
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-appavailability": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-admob-facebook": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-admob-flurry": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.free.courses.learn"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.image.gallery"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-facebook-audnet-sdk": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-facebookads": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-flurry": {
+            "PACKAGE_NAME": "com.weather.weather"
         }
     },
     "dependent_plugins": {},
     "modules": [
         {
-            "id": "cordova-plugin-device.device",
-            "file": "plugins/cordova-plugin-device/www/device.js",
-            "pluginId": "cordova-plugin-device",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "pluginId": "cordova-plugin-statusbar",
             "clobbers": [
-                "device"
+                "window.StatusBar"
             ]
         },
         {
@@ -167,11 +192,11 @@
             ]
         },
         {
-            "id": "cordova-plugin-statusbar.statusbar",
-            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-            "pluginId": "cordova-plugin-statusbar",
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
             "clobbers": [
-                "window.StatusBar"
+                "device"
             ]
         },
         {
@@ -184,25 +209,27 @@
             "runs": true
         },
         {
-            "id": "com.lampa.startapp.startapp",
-            "file": "plugins/com.lampa.startapp/www/startApp.js",
-            "pluginId": "com.lampa.startapp",
-            "merges": [
-                "startApp"
+            "id": "cordova-plugin-appavailability.AppAvailability",
+            "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
+            "pluginId": "cordova-plugin-appavailability",
+            "clobbers": [
+                "appAvailability"
             ]
         },
         {
-            "id": "es6-promise-plugin.Promise",
-            "file": "plugins/es6-promise-plugin/www/promise.js",
-            "pluginId": "es6-promise-plugin",
-            "runs": true
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "pluginId": "onesignal-cordova-plugin",
+            "clobbers": [
+                "OneSignal"
+            ]
         },
         {
-            "id": "cordova-plugin-x-socialsharing.SocialSharing",
-            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
-            "pluginId": "cordova-plugin-x-socialsharing",
+            "id": "cordova-plugin-admobpro.AdMob",
+            "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+            "pluginId": "cordova-plugin-admobpro",
             "clobbers": [
-                "window.plugins.socialsharing"
+                "window.AdMob"
             ]
         },
         {
@@ -215,35 +242,38 @@
             ]
         },
         {
-            "id": "cordova-plugin-admobpro.AdMob",
-            "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-            "pluginId": "cordova-plugin-admobpro",
+            "id": "cordova-plugin-facebookads.FacebookAds",
+            "file": "plugins/cordova-plugin-facebookads/www/FacebookAds.js",
+            "pluginId": "cordova-plugin-facebookads",
             "clobbers": [
-                "window.AdMob"
+                "window.FacebookAds"
             ]
         },
         {
-            "id": "onesignal-cordova-plugin.OneSignal",
-            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
-            "pluginId": "onesignal-cordova-plugin",
+            "id": "cordova-plugin-flurry.FlurryAds",
+            "file": "plugins/cordova-plugin-flurry/www/Flurry.js",
+            "pluginId": "cordova-plugin-flurry",
             "clobbers": [
-                "OneSignal"
+                "window.FlurryAds"
             ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-device": "1.1.6",
-        "cordova-plugin-splashscreen": "4.0.3",
-        "cordova-plugin-statusbar": "2.2.3",
         "cordova-plugin-whitelist": "1.3.2",
+        "cordova-plugin-statusbar": "2.2.3",
+        "cordova-plugin-splashscreen": "4.0.3",
+        "cordova-plugin-console": "1.0.7",
+        "cordova-plugin-device": "1.1.6",
         "ionic-plugin-keyboard": "2.2.1",
-        "com.lampa.startapp": "0.1.4",
-        "es6-promise-plugin": "4.1.0",
-        "cordova-plugin-x-socialsharing": "5.1.8",
+        "cordova-plugin-appavailability": "0.4.2",
+        "onesignal-cordova-plugin": "2.2.0",
+        "cordova-plugin-admob-facebook": "4.23.0",
+        "cordova-plugin-admob-flurry": "5.4.4",
+        "cordova-plugin-admobpro": "2.29.23",
         "cordova-plugin-inappbrowser": "1.7.1",
-        "cordova-plugin-extension": "1.5.1",
-        "cordova-plugin-admobpro": "2.29.0",
-        "onesignal-cordova-plugin": "2.1.2",
-        "cordova-plugin-console": "1.0.7"
+        "cordova-plugin-extension": "1.5.2",
+        "cordova-facebook-audnet-sdk": "4.26.0",
+        "cordova-plugin-facebookads": "4.23.2",
+        "cordova-plugin-flurry": "5.3.3"
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-admob-facebook"
+  version="4.23.0">
+
+  <name>AdMob Mediation Adapter for Facebook Audience Network</name>
+  <description>AdMob Mediation Adapter for Facebook Audience Network</description>
+  <keywords>admob,mediation,facebook</keywords>
+  <repo>https://github.com/floatinghotpot/cordova-admob-pro.git</repo>
+  <issue>https://github.com/floatinghotpot/cordova-admob-pro/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.5" />
+  </engines>
+
+  <!-- dependency id="cordova-plugin-admobpro"/ -->
+  <dependency id="cordova-plugin-facebookads"/>
+
+  <platform name="android">
+    <framework src="com.google.ads.mediation:facebook:+" />
+  </platform>
+
+  <platform name="ios">
+    <framework src="FacebookAdapter.framework" custom="true" />
+  </platform>
+
+</plugin>

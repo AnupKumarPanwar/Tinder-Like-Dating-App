@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-admob-facebook",
+  "version": "4.23.0",
+  "description": "Cordova plugin for AdMob adapter to Facebook AudienceNetwork Ads",
+  "cordova": {
+    "id": "cordova-plugin-admob-facebook",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floatinghotpot/cordova-admob-pro.git"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "ad",
+    "facebook",
+    "rjfun"
+  ],
+  "author": {
+    "name": "Liming Xie"
+  },
+  "license": "MIT"
+}

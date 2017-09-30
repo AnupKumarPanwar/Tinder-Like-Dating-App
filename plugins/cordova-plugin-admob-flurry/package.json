@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-admob-flurry",
+  "version": "5.4.4",
+  "description": "Cordova plugin for AdMob adapter to Yahoo Flurry Ads",
+  "cordova": {
+    "id": "cordova-plugin-admob-flurry",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floatinghotpot/cordova-admob-adapters.git"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "ad",
+    "flurry",
+    "rjfun"
+  ],
+  "author": {
+    "name": "Liming Xie"
+  },
+  "license": "MIT"
+}

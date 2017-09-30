@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-extension",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Cordova Plugin common extension with adapter interface",
   "cordova": {
     "id": "cordova-plugin-extension",

@@ -1,8 +1,16 @@
 {
+    "cordova-plugin-extension": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-extension"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
     "cordova-plugin-whitelist": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-whitelist@1.3.2"
+            "id": "cordova-plugin-whitelist@~1.3.2"
         },
         "is_top_level": true,
         "variables": {}
@@ -10,7 +18,7 @@
     "cordova-plugin-statusbar": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-statusbar@2.2.3"
+            "id": "cordova-plugin-statusbar@~2.2.3"
         },
         "is_top_level": true,
         "variables": {}
@@ -18,7 +26,15 @@
     "cordova-plugin-splashscreen": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-splashscreen@4.0.3"
+            "id": "cordova-plugin-splashscreen@~4.0.3"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console@~1.0.7"
         },
         "is_top_level": true,
         "variables": {}
@@ -26,7 +42,7 @@
     "cordova-plugin-device": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-device"
+            "id": "cordova-plugin-device@~1.1.6"
         },
         "is_top_level": true,
         "variables": {}
@@ -34,56 +50,39 @@
     "ionic-plugin-keyboard": {
         "source": {
             "type": "registry",
-            "id": "ionic-plugin-keyboard"
+            "id": "ionic-plugin-keyboard@~2.2.1"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "com.lampa.startapp": {
+    "cordova-plugin-appavailability": {
         "source": {
             "type": "registry",
-            "id": "com.lampa.startapp"
+            "id": "cordova-plugin-appavailability@~0.4.2"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-x-socialsharing": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "es6-promise-plugin": {
+    "cordova-plugin-admob-facebook": {
         "source": {
             "type": "registry",
-            "id": "es6-promise-plugin"
+            "id": "cordova-plugin-admob-facebook"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-facebookads": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-facebookads"
         },
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-inappbrowser": {
+    "cordova-facebook-audnet-sdk": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-inappbrowser@1.7.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-admobpro": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-admobpro"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-extension": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-extension"
+            "id": "cordova-facebook-audnet-sdk"
         },
         "is_top_level": false,
         "variables": {}
@@ -96,10 +95,34 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-console": {
+    "cordova-plugin-admob-flurry": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-console@~1.0.7"
+            "id": "cordova-plugin-admob-flurry"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-flurry": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-flurry"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-admobpro": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-admobpro"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-inappbrowser@1.7.1"
         },
         "is_top_level": true,
         "variables": {}

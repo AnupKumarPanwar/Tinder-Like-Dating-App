@@ -89,7 +89,7 @@
     <div id="bg" style="background-image: url('{{userDp}}');" >
       <div id="search-container">
         <div id="search-bg" style="background-image: url('{{userDp}}');"></div>
-        <div id="search" style="height:{{deviceHeight}}px;">
+        <div id="search" style="height:{{deviceHeight+120}}px;">
           <h1>Its so Awesome!</h1>
           <p class="font-default">You have liked {{current_card.name}}</p>
           <div class="text-center" style="margin-top:45px;">
@@ -99,7 +99,7 @@
             <img ng-src="{{userDp}}" height="130" width="130" class="img-matched animated bounceInRight" alt="">
             <!-- <img ng-src="{{current_card.photo_url}}" height="130" width="130" class="img-matched animated bounceInRight" alt=""> -->
           </div>
-          <div class="text-center match-buttons" >
+          <div class="text-center match-buttons" style="margin-top:-5px;">
            <!--  <button ng-click="hideMatch();slideTo(2)" class="button button-block button-stable button-outline"><i class="ion-chatbubbles font-130"></i> Instagram</button>
             <button ng-click="hideMatch()" class="button button-block button-stable button-outline" style="margin-top:17px;"><i class="ion-ios-browsers font-130"></i> Snapchat</button> -->
 
@@ -107,9 +107,9 @@
             <button ng-click="openSnapchat()" class="button button-block button-stable button-outline" style="margin-top:17px;" ng-show="current_card.snapchat_username"><i class="ion-ios-browsers font-130"></i> Snapchat</button>
 
           </div>
-          <div class="text-center" style="margin-top:30px;">
+          <div class="text-center" style="margin-top:25px;">
             <button class="button button-block button-clear button-stable font-default" ng-click="shareIt()"><i class="ion-share font-130"></i> Tell Your Friends</button>
-            <button class="button button-block button-clear button-stable font-default" ng-click="closeModal()"><i class="ion-close-circled"></i> Close</button>
+            <button class="button button-block button-clear button-stable font-default" ng-click="closeModal()" style="margin-top:-5px;"><i class="ion-close-circled"></i> Close</button>
           </div>
         </div>
       </div>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="cordova-plugin-admob-flurry"
+	version="5.4.4">
+      
+    <name>AdMob Mediation Adapter for Flurry Ads</name>
+	<description>AdMob Mediation Adapter for Flurry Ads</description>
+	<keywords>admob,flurry,mediation</keywords>
+    <repo>https://github.com/floatinghotpot/cordova-admob-adapters.git</repo>
+    <issue>https://github.com/floatinghotpot/cordova-admob-adapters/issues</issue>
+
+	<engines>
+	    <engine name="cordova" version=">=3.5" />
+	</engines>
+
+    <!-- dependency id="cordova-plugin-admobpro"/ -->
+    <dependency id="cordova-plugin-flurry"/>
+    
+    <platform name="android">
+        <source-file src="flurryAndroidDFPandAdMobMediationAdapter-5.0.0.r1.jar" target-dir="libs" />
+     </platform>
+
+     <platform name="ios">    
+          <source-file src="libFlurryDFPAdapter_5.4.0.r1.a" framework="true"/>
+	</platform>
+
+</plugin>

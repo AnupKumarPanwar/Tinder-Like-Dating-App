@@ -414,9 +414,8 @@ $scope.shareIt=function()
   function showProfile(card) {
 
 
-    $ionicLoading.show({
-            template: 'Loading More Pic...'
-         });
+      $ionicLoading.show({template: 'Loading more pics...'});
+
 
 
         console.log(card.instagram_username);
@@ -435,6 +434,8 @@ $scope.shareIt=function()
           }).then(function(modal) {
             $scope.modalProfile = modal;
             $scope.modalProfile.show();
+    $ionicLoading.hide();
+
             // AdMob.showInterstitial();
             $scope.hideProfile = function(){
               $scope.modalProfile.hide();
@@ -470,7 +471,9 @@ $scope.shareIt=function()
             }).then(function(modal) {
               $scope.modalProfile = modal;
               $scope.modalProfile.show();
-              AdMob.showInterstitial();
+    $ionicLoading.hide();
+
+              // AdMob.showInterstitial();
               $scope.hideProfile = function(){
                 $scope.modalProfile.hide();
               }
@@ -492,7 +495,9 @@ $scope.shareIt=function()
             }).then(function(modal) {
               $scope.modalProfile = modal;
               $scope.modalProfile.show();
-              AdMob.showInterstitial();
+    $ionicLoading.hide();
+                
+              // AdMob.showInterstitial();
               $scope.hideProfile = function(){
                 $scope.modalProfile.hide();
               }
@@ -502,7 +507,7 @@ $scope.shareIt=function()
       }
 
 
-   	$ionicLoading.hide();
+   	// $ionicLoading.hide();
 
   };
 

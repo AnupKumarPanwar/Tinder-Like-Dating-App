@@ -7,46 +7,55 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.weather.weather"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.weather.weather"
         },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "com.lampa.startapp": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "cordova-plugin-admobpro": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
-        "onesignal-cordova-plugin": {
-            "PACKAGE_NAME": "com.rightswipe"
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.weather.weather"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.rightswipe"
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-appavailability": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-admob-facebook": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-admob-flurry": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.free.courses.learn"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.image.gallery"
         }
     },
     "dependent_plugins": {
-        "es6-promise-plugin": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
-        },
         "cordova-plugin-extension": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-facebook-audnet-sdk": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-facebookads": {
+            "PACKAGE_NAME": "com.weather.weather"
+        },
+        "cordova-plugin-flurry": {
+            "PACKAGE_NAME": "com.weather.weather"
         }
     }
 }

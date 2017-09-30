@@ -39,7 +39,7 @@ function initApp() {
         autoShow: false
     });
 
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
      
      
      AdMob.prepareRewardVideoAd({

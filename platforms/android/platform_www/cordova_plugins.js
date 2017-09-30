@@ -1,11 +1,11 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "id": "cordova-plugin-device.device",
-        "file": "plugins/cordova-plugin-device/www/device.js",
-        "pluginId": "cordova-plugin-device",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "pluginId": "cordova-plugin-statusbar",
         "clobbers": [
-            "device"
+            "window.StatusBar"
         ]
     },
     {
@@ -17,11 +17,11 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-statusbar.statusbar",
-        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "pluginId": "cordova-plugin-statusbar",
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
         "clobbers": [
-            "window.StatusBar"
+            "device"
         ]
     },
     {
@@ -34,25 +34,27 @@ module.exports = [
         "runs": true
     },
     {
-        "id": "com.lampa.startapp.startapp",
-        "file": "plugins/com.lampa.startapp/www/startApp.js",
-        "pluginId": "com.lampa.startapp",
-        "merges": [
-            "startApp"
+        "id": "cordova-plugin-appavailability.AppAvailability",
+        "file": "plugins/cordova-plugin-appavailability/www/AppAvailability.js",
+        "pluginId": "cordova-plugin-appavailability",
+        "clobbers": [
+            "appAvailability"
         ]
     },
     {
-        "id": "es6-promise-plugin.Promise",
-        "file": "plugins/es6-promise-plugin/www/promise.js",
-        "pluginId": "es6-promise-plugin",
-        "runs": true
+        "id": "onesignal-cordova-plugin.OneSignal",
+        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+        "pluginId": "onesignal-cordova-plugin",
+        "clobbers": [
+            "OneSignal"
+        ]
     },
     {
-        "id": "cordova-plugin-x-socialsharing.SocialSharing",
-        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
-        "pluginId": "cordova-plugin-x-socialsharing",
+        "id": "cordova-plugin-admobpro.AdMob",
+        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+        "pluginId": "cordova-plugin-admobpro",
         "clobbers": [
-            "window.plugins.socialsharing"
+            "window.AdMob"
         ]
     },
     {
@@ -65,38 +67,41 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-admobpro.AdMob",
-        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-        "pluginId": "cordova-plugin-admobpro",
+        "id": "cordova-plugin-facebookads.FacebookAds",
+        "file": "plugins/cordova-plugin-facebookads/www/FacebookAds.js",
+        "pluginId": "cordova-plugin-facebookads",
         "clobbers": [
-            "window.AdMob"
+            "window.FacebookAds"
         ]
     },
     {
-        "id": "onesignal-cordova-plugin.OneSignal",
-        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
-        "pluginId": "onesignal-cordova-plugin",
+        "id": "cordova-plugin-flurry.FlurryAds",
+        "file": "plugins/cordova-plugin-flurry/www/Flurry.js",
+        "pluginId": "cordova-plugin-flurry",
         "clobbers": [
-            "OneSignal"
+            "window.FlurryAds"
         ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-device": "1.1.6",
-    "cordova-plugin-splashscreen": "4.0.3",
-    "cordova-plugin-statusbar": "2.2.3",
     "cordova-plugin-whitelist": "1.3.2",
+    "cordova-plugin-statusbar": "2.2.3",
+    "cordova-plugin-splashscreen": "4.0.3",
+    "cordova-plugin-console": "1.0.7",
+    "cordova-plugin-device": "1.1.6",
     "ionic-plugin-keyboard": "2.2.1",
-    "com.lampa.startapp": "0.1.4",
-    "es6-promise-plugin": "4.1.0",
-    "cordova-plugin-x-socialsharing": "5.1.8",
+    "cordova-plugin-appavailability": "0.4.2",
+    "onesignal-cordova-plugin": "2.2.0",
+    "cordova-plugin-admob-facebook": "4.23.0",
+    "cordova-plugin-admob-flurry": "5.4.4",
+    "cordova-plugin-admobpro": "2.29.23",
     "cordova-plugin-inappbrowser": "1.7.1",
-    "cordova-plugin-extension": "1.5.1",
-    "cordova-plugin-admobpro": "2.29.0",
-    "onesignal-cordova-plugin": "2.1.2",
-    "cordova-plugin-console": "1.0.7"
+    "cordova-plugin-extension": "1.5.2",
+    "cordova-facebook-audnet-sdk": "4.26.0",
+    "cordova-plugin-facebookads": "4.23.2",
+    "cordova-plugin-flurry": "5.3.3"
 };
 // BOTTOM OF METADATA
 });

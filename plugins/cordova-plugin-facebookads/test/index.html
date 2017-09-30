@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src * 'unsafe-inline' 'unsafe-eval'">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<title>Hello World</title>
+<script type="text/javascript" src="jquery-1.9.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<style type="text/css">
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: gray;
+	color: white;
+}
+
+div#fullpage {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0px solid red;
+	text-align: center;
+	vertical-align: middle;
+}
+
+button {
+	font-size: 18px;
+}
+</style>
+</head>
+<body onload="onLoad()" onresize="onResize()">
+	<script>
+
+		function onLoad() {
+			if ((/(ipad|iphone|ipod|android)/i.test(navigator.userAgent))) {
+				document.addEventListener('deviceready', initApp, false);
+			} else {
+				initApp();
+			}
+		}
+
+		var ad_units = {
+			ios : { 
+				banner:"726719434140206_777151452430337",
+				interstitial:"726719434140206_777151589096990",
+                nativeAd:"726719434140206_777151705763645"
+			},
+			android : {
+				banner:"726719434140206_777151452430337",
+				interstitial:"726719434140206_777151589096990",
+                nativeAd:"726719434140206_777151705763645"
+			}
+		};
+
+		// select the right Ad Id according to platform
+		var adid = (/(android)/i.test(navigator.userAgent)) ? ad_units.android : ad_units.ios;
+
+		function initApp() {
+			if (! FacebookAds) {
+				alert('FacebookAds plugin not ready');
+				return;
+			}
+
+			registerAdEvents();
+			
+			FacebookAds.setOptions({
+				isTesting: true,
+				deviceHash: 'fdc5f2914ce1d0642d7311b901489253cacbf80e'
+			});
+
+			createSelectedBanner();
+		}
+		var nativeId = null;
+		function updateClickArea(){
+			if (nativeId != null) {
+				// change the click area
+				var offset = $("#nativead").offset();
+				var y = offset.top - $(window).scrollTop();
+				var x = offset.left - $(window).scrollLeft();
+				var w = $("#nativead").width();
+				var h = $("#nativead").height();
+				if(FacebookAds) FacebookAds.setNativeAdClickArea(nativeId, x, y, w, h);
+			}
+		}
+		$(window).scroll(function(){
+			updateClickArea();
+		});
+		// optional, in case respond to events or handle error
+		function registerAdEvents() {
+			document.addEventListener('onAdFailLoad', function(data) {
+				alert('error: ' + data.error + ', reason: ' + data.reason);
+			});
+			document.addEventListener('onAdLoaded',function(data) {
+				if (data.adType == "native") {
+					var adRes = data.adRes;
+					//alert( JSON.stringify(adRes) );
+			
+					// show ad
+					nativeId = data.adId;
+					var nativeAdContent = adRes.title + '<br/>'
+							+ adRes.body
+							+ "<br/>rating: " + adRes.rating + ", " + adRes.buttonText + "<br/>"
+							+ adRes.socialContext + "<br/>"
+							+ "<img src='" + adRes.icon.url + "' width='" + adRes.icon.width + "' height='" + adRes.icon.height + "'/><br/>"
+							//+ "<img src='" + adRes.coverImage.url + "' width='" + adRes.coverImage.width + "' height='" + adRes.coverImage.height + "'/>"
+							;
+					$('#nativead').html(nativeAdContent);
+					
+					updateClickArea();
+				}
+			});
+			document.addEventListener('onAdPresent', function(data) {
+			});
+			document.addEventListener('onAdLeaveApp', function(data) {
+			});
+			document.addEventListener('onAdDismiss', function(data) {
+			});
+		}
+
+		// click button to call following functions
+		function getSelectedAdSize() {
+			var i = document.getElementById("adSize").selectedIndex;
+			var items = document.getElementById("adSize").options;
+			return items[i].value;
+		}
+		function getSelectedPosition() {
+			var i = document.getElementById("adPosition").selectedIndex;
+			var items = document.getElementById("adPosition").options;
+			return parseInt(items[i].value);
+		}
+		function createSelectedBanner() {
+			var overlap = document.getElementById('overlap').checked;
+			FacebookAds.createBanner({
+				adId : adid.banner,
+				overlap : overlap,
+				adSize : getSelectedAdSize(),
+				position : getSelectedPosition()
+			});
+		}
+		function showBannerAtSelectedPosition() {
+			if(FacebookAds) FacebookAds.showBanner(getSelectedPosition());
+		}
+		function showBannerAtGivenXY() {
+			var x = document.getElementById('x').value;
+			var y = document.getElementById('y').value;
+			if(FacebookAds) FacebookAds.showBannerAtXY(x, y);
+		}
+		function prepareInterstitial() {
+			var autoshow = document.getElementById('autoshow').checked;
+			if(FacebookAds) FacebookAds.prepareInterstitial({
+				adId : adid.interstitial,
+				autoShow : autoshow
+			});
+		}
+		function onResize() {
+			var s = document.getElementById('sizeinfo');
+			s.innerHTML = "web view: " + window.innerWidth + " x "
+					+ window.innerHeight;
+		}
+		function createNativeAd() {
+			if(FacebookAds) FacebookAds.createNativeAd(adid.nativeAd);
+		}
+		function removeNativeAd() {
+			$('#nativead').html("<br/>");
+			if(FacebookAds) FacebookAds.removeNativeAd(nativeId);
+		}
+	</script>
+	<div id="fullpage">
+		<p>Demo for FacebookAds Plugin</p>
+		Banner<br /> Standard: <select id="adSize">
+			<option value='SMART_BANNER'>SMART_BANNER</option>
+			<option value='BANNER'>BANNER</option>
+		</select><br /> <input type='checkbox' id='overlap' />overlap
+		<button onclick="createSelectedBanner();">create</button><button onclick="FacebookAds.removeBanner();">remove</button>
+		<select id="adPosition">
+			<option value='1'>Top Left</option>
+			<option value='2'>Top Center</option>
+			<option value='3'>Top Right</option>
+			<option value='4'>Left</option>
+			<option value='5'>Center</option>
+			<option value='6'>Right</option>
+			<option value='7'>Bottom Left</option>
+			<option value='8' selected>Bottom Center</option>
+			<option value='9'>Bottom Right</option>
+		</select>
+		<button onclick="showBannerAtSelectedPosition();">show</button><button onclick="FacebookAds.hideBanner();">hide</button>
+		<br /> (<input id='x' type='text' size=3 />,<input id='y'
+			type='text' size=3>)
+		<button onclick="showBannerAtGivenXY();">show At XY</button>
+		
+		<hr />
+
+		<p>Interstitial</p>
+		<input type='checkbox' id='autoshow' checked />auto show when ready<br />
+		<button onclick="prepareInterstitial();">Prepare</button>
+		<button onclick="FacebookAds.showInterstitial();">Show</button>
+		<div id='sizeinfo'></div>
+		
+		<hr />
+
+		<p>Native Ad</p>
+		<div id='nativead' style="border:1pt solid red;width:300;"><br/></div>
+		<button onclick="createNativeAd();">Create</button>
+		<button onclick="removeNativeAd();">Remove</button>
+	</div>
+</body>
+</html>

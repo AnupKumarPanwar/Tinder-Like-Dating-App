@@ -1,0 +1,34 @@
+{
+  "name": "cordova-facebook-audnet-sdk",
+  "version": "4.26.0",
+  "description": "Add Facebook AudienceNetwork SDK to Cordova porject, as dependency for other plugins",
+  "cordova": {
+    "id": "cordova-facebook-audnet-sdk",
+    "platforms": [
+      "android",
+      "amazon-fireos",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floatinghotpot/cordova-facebook-audnet-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-facebook-audnet-sdk/issues"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "facebook",
+    "audiencenetwork",
+    "fb",
+    "audnet",
+    "rjfun",
+    "sdk"
+  ],
+  "author": {
+    "name": "Liming Xie"
+  },
+  "license": "MIT"
+}

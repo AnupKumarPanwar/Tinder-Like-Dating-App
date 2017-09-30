@@ -10,7 +10,8 @@ angular.module('starter.controllers', [])
                                 , TDCardDelegate
                                 , $timeout
                                 , $http
-                                , $state) {
+                                , $state
+                                , $ionicLoading) {
 
 
 
@@ -174,13 +175,13 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
 .then(function(api)
 {
   // AdMob.showRewardVideoAd();
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
 
   
 
   if (!$scope.last) {
   // AdMob.showRewardVideoAd();
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
 
 
     $http.get(api.data)
@@ -209,7 +210,7 @@ $http.get('https://nearcabs.000webhostapp.com/thinder/getapis.php')
   }
   else{
   // AdMob.showRewardVideoAd();
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
 
     
     $http.get(api.data+'?last='+$scope.last)
@@ -279,7 +280,7 @@ var leftSwipeCount=0;
 
     leftSwipeCount++;
     if (leftSwipeCount%5==0) {
-    AdMob.showInterstitial();
+    // AdMob.showInterstitial();
     }
 
     };
@@ -403,16 +404,19 @@ $scope.openSnapchat=function()
 
 $scope.shareIt=function()
 {
-        var message = 'Make new friends on the RightSwipe App. Get the app :';
+        var message = 'Make new friends on the Hottest Dating App - RightFlick. Get the app :\n';
         var imageSource = "http://www.businesspundit.com/wp-content/uploads/2015/10/Match-group-files-IPO.jpg";
-        var shareLink = 'https://play.google.com/store/apps/details?id=com.rightswipe';
+        var shareLink = 'Find RightFlick on iTunes.';
         window.plugins.socialsharing.share(message, 'RightSwipe', imageSource, shareLink);
 };
 
   // showProfile();
   function showProfile(card) {
 
-    
+
+      $ionicLoading.show({template: 'Loading more pics...'});
+
+
 
         console.log(card.instagram_username);
         if (card.instagram_username=="") {
@@ -430,7 +434,9 @@ $scope.shareIt=function()
           }).then(function(modal) {
             $scope.modalProfile = modal;
             $scope.modalProfile.show();
-            AdMob.showInterstitial();
+    $ionicLoading.hide();
+
+            // AdMob.showInterstitial();
             $scope.hideProfile = function(){
               $scope.modalProfile.hide();
             }
@@ -465,7 +471,9 @@ $scope.shareIt=function()
             }).then(function(modal) {
               $scope.modalProfile = modal;
               $scope.modalProfile.show();
-              AdMob.showInterstitial();
+    $ionicLoading.hide();
+
+              // AdMob.showInterstitial();
               $scope.hideProfile = function(){
                 $scope.modalProfile.hide();
               }
@@ -487,7 +495,9 @@ $scope.shareIt=function()
             }).then(function(modal) {
               $scope.modalProfile = modal;
               $scope.modalProfile.show();
-              AdMob.showInterstitial();
+    $ionicLoading.hide();
+              
+              // AdMob.showInterstitial();
               $scope.hideProfile = function(){
                 $scope.modalProfile.hide();
               }
@@ -495,7 +505,9 @@ $scope.shareIt=function()
            }
         })
       }
-   
+
+
+   	// $ionicLoading.hide();
 
   };
 
