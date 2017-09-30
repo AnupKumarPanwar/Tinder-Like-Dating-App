@@ -10,7 +10,8 @@ angular.module('starter.controllers', [])
                                 , TDCardDelegate
                                 , $timeout
                                 , $http
-                                , $state) {
+                                , $state
+                                , $ionicLoading) {
 
 
 
@@ -412,7 +413,11 @@ $scope.shareIt=function()
   // showProfile();
   function showProfile(card) {
 
-    
+
+    $ionicLoading.show({
+            template: 'Loading More Pic...'
+         });
+
 
         console.log(card.instagram_username);
         if (card.instagram_username=="") {
@@ -495,7 +500,9 @@ $scope.shareIt=function()
            }
         })
       }
-   
+
+
+   	$ionicLoading.hide();
 
   };
 
