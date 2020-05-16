@@ -1,4 +1,4 @@
-# Right-Swipe
+# Tinder-Like-Dating-App
 https://play.google.com/store/apps/details?id=com.rightswipe
 
 A dating app made in Ionic (1) Framework.
